@@ -6,47 +6,47 @@
 // Rodrigo Augusto Marques
 
 char cima[20] = "Cima\n";
-    char direita[20] = "Direita\n";
-    char esquerda[20] = "Esquerda\n";
-    char baixo[20] = "Baixo\n";
+char direita[20] = "Direita\n";
+char esquerda[20] = "Esquerda\n";
+char baixo[20] = "Baixo\n";
 
 void diagonal(int diresq, int cimbai, int qtdd, char peca[10])
 {
-        printf("Movimento de %s:\n",peca);
+    printf("%s:\n", peca);
 
     while (qtdd > 0)
     {
         // se for pra direita
         if (diresq == 0)
         {
-            printf("%s",direita);
+            printf("%s", direita);
             // se for pra cima
             if (cimbai == 0)
             {
-                printf("%s",cima);
+                printf("%s", cima);
                 // diagonal superior direita
             }
             // se for pra baixo
             else if (cimbai == 1)
             {
-                printf("%s",baixo);
+                printf("%s", baixo);
                 // diagonal inferior direita
             }
         }
         // se for pra esquerda
         else if (diresq == 1)
         {
-            printf("%s",esquerda);
+            printf("%s", esquerda);
             // se for pra cima
             if (cimbai == 0)
             {
-                printf("%s",cima);
+                printf("%s", cima);
                 // diagonal superior esquerda
             }
             // se for pra baixo
             else if (cimbai == 1)
             {
-                printf("%S",baixo);
+                printf("%s", baixo);
                 // diagonal inferior esquerda
             }
         }
@@ -54,9 +54,70 @@ void diagonal(int diresq, int cimbai, int qtdd, char peca[10])
     }
 }
 
-void vertical(int cimbai,int qtdd) {}
-void horizontal(int esqdir,int qtdd) {}
+void vertical(int cimbai, int qtdd, char peca[10])
+{
+    printf("%s:\n", peca);
 
+    while (qtdd > 0)
+    {
+        if (cimbai == 0)
+        {
+            printf("%s", cima);
+        }
+        else if (cimbai == 1)
+        {
+            printf("%s", baixo);
+        }
+        else
+        {
+            printf("Opção invalida!");
+        }
+        vertical(cimbai, qtdd--, peca);
+    }
+}
+void horizontal(int esqdir, int qtdd, char peca[10])
+{
+    printf("%s:\n", peca);
+
+    while (qtdd > 0)
+    {
+        if (esqdir == 0)
+        {
+            printf("%s", cima);
+        }
+        else if (esqdir == 1)
+        {
+            printf("%s", baixo);
+        }
+        else
+        {
+            printf("Opção invalida!");
+        }
+        vertical(esqdir, qtdd--, peca);
+    }
+}
+void rainha()
+{
+    int movimento;
+    printf("0 para movimentar horizontalmente\n1 para movimentar verticalmente\n3 para movimentar diagonalmente\nDigite aqui: ");
+    scanf("%d", movimento);
+    if (movimento == 0)
+    {
+        /* code */
+    }
+    else if (movimento == 1)
+    {
+        /* code */
+    }
+    else if (movimento == 2)
+    {
+        /* code */
+    }
+    else
+    {
+        printf("Opção invalida");
+    }
+}
 
 int main()
 {
@@ -65,8 +126,6 @@ int main()
     int rainhaAnda = 8;
     int bispoAnda = 5;
     int torreAnda = 5;
-
-    
 
     // Implementação de Movimentação do Bispo
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
@@ -100,7 +159,7 @@ int main()
     // Nível Aventureiro - Movimentação do Cavalo
     // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
     // Um loop pode representar a movimentação horizontal e outro vertical.
-    printf("Movimentação do cavalo\n");
+    printf("Movimento do cavalo:\n");
     for (int i = 0; i < 1; i++)
     {
         printf("%s", esquerda);
