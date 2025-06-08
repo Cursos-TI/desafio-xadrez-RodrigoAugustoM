@@ -9,7 +9,7 @@ int main()
 {
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
-    int rainhaAndaesq = 8;
+    int rainhaAnda = 8;
     int bispoAnda = 5;
     int torreAnda = 5;
 
@@ -49,7 +49,7 @@ int main()
 
     printf("Movimento da Rainha:\n");
 
-    while (iRainha < rainhaAndaesq)
+    while (iRainha < rainhaAnda)
     {
         printf("%s", esquerda);
         iRainha++;
