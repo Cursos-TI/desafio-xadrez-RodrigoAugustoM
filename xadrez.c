@@ -17,10 +17,7 @@ int main()
     char direita[20] = "Direita\n";
     char esquerda[20] = "Esquerda\n";
     char baixo[20] = "Baixo\n";
-    char dc[20] = "Direita\nCima\n";
-    char ec[20] = "Esquerda\nCima\n";
-    char db[20] = "Direita\nBaixo\n";
-    char eb[20] = "Esquerda\nBaixo\n";
+    
 
     // Implementação de Movimentação do Bispo
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
@@ -28,7 +25,8 @@ int main()
 
     for (int iBispo = 0; iBispo < bispoAnda; iBispo++)
     {
-        printf("%s", dc);
+        
+        printf("%s%s", direita,cima);
     }
 
     // Implementação de Movimentação da Torre
