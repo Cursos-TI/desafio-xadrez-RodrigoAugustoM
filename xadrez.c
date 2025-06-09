@@ -137,6 +137,19 @@ void rainha()
         printf("Opção invalida");
     }
 }
+void rei(){
+    int hovedi = 0;
+    int cimbai = 0;
+    int esqdir = 0;
+    printf("Para mover o rei escolha \n0 para horizontal\n1 para vertical\n2 para diagonal:");
+    scanf("%d",&hovedi);
+    printf("0 pra cima\n1 para baixo");
+    scanf("%d",cimbai);
+    printf("0 pra esquerda\n1 para direita");
+    scanf("%d",esqdir);
+    
+
+}
 
 int main()
 {
