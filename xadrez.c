@@ -10,14 +10,14 @@ char direita[20] = "Direita\n";
 char esquerda[20] = "Esquerda\n";
 char baixo[20] = "Baixo\n";
 
-void diagonal(int diresq, int cimbai, int qtdd, char peca[10])
+void diagonal(int esqdir, int cimbai, int qtdd, char peca[10])
 {
     printf("%s:\n", peca);
 
     while (qtdd > 0)
     {
         // se for pra direita
-        if (diresq == 0)
+        if (esqdir == 0)
         {
             printf("%s", direita);
             // se for pra cima
@@ -34,7 +34,7 @@ void diagonal(int diresq, int cimbai, int qtdd, char peca[10])
             }
         }
         // se for pra esquerda
-        else if (diresq == 1)
+        else if (esqdir == 1)
         {
             printf("%s", esquerda);
             // se for pra cima
@@ -83,35 +83,54 @@ void horizontal(int esqdir, int qtdd, char peca[10])
     {
         if (esqdir == 0)
         {
-            printf("%s", cima);
+            printf("%s", esquerda);
         }
         else if (esqdir == 1)
         {
-            printf("%s", baixo);
+            printf("%s", direita);
         }
         else
         {
             printf("Opção invalida!");
         }
-        vertical(esqdir, qtdd--, peca);
+        horizontal(esqdir, qtdd--, peca);
     }
 }
 void rainha()
 {
-    int movimento;
-    printf("0 para movimentar horizontalmente\n1 para movimentar verticalmente\n3 para movimentar diagonalmente\nDigite aqui: ");
-    scanf("%d", movimento);
+    int movimento = 0;
+    int qtdd = 0;
+    printf("0 para movimentar horizontalmente\n1 para movimentar verticalmente\n2 para movimentar diagonalmente\nDigite aqui: ");
+    scanf("%d", &movimento);
+    printf("Quantas casas?\n");
+    scanf("%d",&qtdd);
     if (movimento == 0)
     {
-        /* code */
+        int esqdir;
+        printf("Horizontalmente, à esquerda digite 0 ou direita digite 1");
+        scanf("%d",&esqdir);
+        horizontal(esqdir,qtdd,'Rainha');
     }
     else if (movimento == 1)
     {
-        /* code */
+        int cimbai;
+        printf("Verticalmente, pra cima digite 0, pra baixo digite 1");
+        scanf("%d",&cimbai);
+        vertical(cimbai,qtdd,'Rainha');
     }
     else if (movimento == 2)
     {
-        /* code */
+        int cimbai;
+        int esqdir;
+        int qtdd;
+        printf("Movimento na diagonal pra cima, digite 0 pra baixo, digite 1\n");
+        scanf("%d",&cimbai);
+        if(cimbai == 0) {
+            printf("Movimento na diagonal pra cima \nPra esquerda digite 0\nPra direita, digite 1\n");
+            scanf("%d",&esqdir);
+        }
+        
+        diagonal(esqdir,cimbai,qtdd,'Rainha');
     }
     else
     {
@@ -146,15 +165,7 @@ int main()
 
     // Implementação de Movimentação da Rainha
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
-    int iRainha = 0;
-
-    printf("Movimento da Rainha:\n");
-
-    while (iRainha < rainhaAnda)
-    {
-        printf("%s", esquerda);
-        iRainha++;
-    }
+    rainha();
 
     // Nível Aventureiro - Movimentação do Cavalo
     // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
