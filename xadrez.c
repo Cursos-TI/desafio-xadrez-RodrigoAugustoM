@@ -12,7 +12,7 @@ char baixo[20] = "Baixo\n";
 
 void diagonal(int esqdir, int cimbai, int qtdd)
 {
-    
+  //para a diagonal usar a horizontal e vertical 
 
     while (qtdd > 0)
     {
