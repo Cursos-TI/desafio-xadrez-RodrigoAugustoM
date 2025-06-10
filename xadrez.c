@@ -54,9 +54,9 @@ void diagonal(int esqdir, int cimbai, int qtdd)
     }
 }
 
-void vertical(int cimbai, int qtdd, char peca[10])
+void vertical(int cimbai, int qtdd)
 {
-    printf("%s:\n", peca);
+   
 
     while (qtdd > 0)
     {
@@ -75,9 +75,9 @@ void vertical(int cimbai, int qtdd, char peca[10])
         vertical(cimbai, qtdd--, peca);
     }
 }
-void horizontal(int esqdir, int qtdd, char peca[10])
+void horizontal(int esqdir, int qtdd)
 {
-    printf("%s:\n", peca);
+    
 
     while (qtdd > 0)
     {
