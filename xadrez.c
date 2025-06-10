@@ -10,9 +10,9 @@ char direita[20] = "Direita\n";
 char esquerda[20] = "Esquerda\n";
 char baixo[20] = "Baixo\n";
 
-void diagonal(int esqdir, int cimbai, int qtdd, char peca[10])
+void diagonal(int esqdir, int cimbai, int qtdd)
 {
-    printf("%s:\n", peca);
+    
 
     while (qtdd > 0)
     {
